@@ -1,25 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Nav from './Nav';
+import MovieList from './MovieList';
+import AddMovie from './AddMovie';
+import { MovieProvider } from './MovieContext';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // Wrapping in MovieProvider allows children
+    // access to all MovieContext information.
+
+    <MovieProvider>
+      <div className='App'>
+        <Nav />
+
+        <div class='row no-gutters'>
+          <div class='col-3 no-gutters'>
+            <div class='leftframe'>
+              <AddMovie />
+            </div>
+          </div>
+
+          <div class='col-9 no-gutters'>
+            <div class='rightframe'>
+              <MovieList />
+            </div>
+          </div>
+        </div>
+      </div>
+    </MovieProvider>
   );
 }
 

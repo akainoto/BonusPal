@@ -1,0 +1,17 @@
+.leftframe,
+.rightframe {
+  height: 100vh;
+  width: 100%;
+}
+
+.leftframe {
+  background-color: aliceblue;
+}
+
+.rightframe {
+  background-color: azure;
+}
+
+input {
+  vertical-align: top;
+}
