@@ -9,6 +9,7 @@ export const MovieProvider = (props) => {
     {
       name: 'The Matrix',
       price: '$10',
+      image: '',
       id: 23124,
     },
   ]);
