@@ -23,11 +23,13 @@ const AddMovie = () => {
   const addMovie = (e) => {
     // Stops page refreshing every time it updates
     e.preventDefault();
-    // Makes a copy of the array of objects (movies)
-    setMovies((prevMovies) => [
-      ...prevMovies,
-      { name: name, price: price, image: image },
-    ]);
+    // Makes a copy of the array of objects and lists ALL added movies(movies)
+    // setMovies((prevMovies) => [
+    //   ...prevMovies,
+    //   { name: name, price: price, image: image },
+    // ]);
+    // Lists recently typed in Information ONLY (No list)
+    setMovies(() => [{ name: name, price: price, image: image }]);
   };
 
   return (
