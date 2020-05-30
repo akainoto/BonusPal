@@ -5,6 +5,7 @@ const AddMovie = () => {
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
   const [image, setImage] = useState('');
+  const [affLink, setAffLink] = useState('');
 
   const [movies, setMovies] = useContext(MovieContext);
 
@@ -20,6 +21,10 @@ const AddMovie = () => {
     setImage(e.target.value);
   };
 
+  const updateAffLink = (e) => {
+    setAffLink(e.target.value);
+  };
+
   const addMovie = (e) => {
     // Stops page refreshing every time it updates
     e.preventDefault();
@@ -29,7 +34,9 @@ const AddMovie = () => {
     //   { name: name, price: price, image: image },
     // ]);
     // Lists recently typed in Information ONLY (No list)
-    setMovies(() => [{ name: name, price: price, image: image }]);
+    setMovies(() => [
+      { name: name, price: price, image: image, affLink: affLink },
+    ]);
   };
 
   return (
@@ -45,6 +52,10 @@ const AddMovie = () => {
       Enter Image Address
       <br />
       <input type='text' image={image} onChange={updateImage} />
+      <br />
+      Affiliate Link
+      <br />
+      <input type='text' affLink={image} onChange={updateAffLink} />
       <br />
       <br />
       <button>Submit</button>

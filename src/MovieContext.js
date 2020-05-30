@@ -7,9 +7,10 @@ export const MovieContext = createContext();
 export const MovieProvider = (props) => {
   const [movies, setMovies] = useState([
     {
-      name: 'The Matrix',
-      price: '$10',
-      image: '',
+      name: 'Enter Title',
+      price: 'Enter Price',
+      image: 'Product URL',
+      affLink: '',
       id: 23124,
     },
   ]);
